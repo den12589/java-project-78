@@ -1,11 +1,6 @@
 package hexlet.code.schemas;
 
-import java.util.Objects;
-
 public class NumberSchema extends BaseSchema<Integer> {
-    public void required() {
-        checks.add(Objects::nonNull);
-    }
 
     public void positive() {
         checks.add(i -> i > 0);
