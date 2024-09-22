@@ -3,8 +3,8 @@ package hexlet.code.schemas;
 public class StringSchema extends BaseSchema<String> {
 
     public StringSchema required() {
-        checks.add(s -> !s.isEmpty());
         super.required();
+        checks.add(s -> !s.isEmpty());
         return this;
     }
 
