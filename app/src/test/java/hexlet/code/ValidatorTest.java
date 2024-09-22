@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 class ValidatorTest {
 
     void chainMethods() {
-
         Validator v = new Validator();
         StringSchema schema = v.string();
         assertTrue(schema.contains("what").isValid("what does the fox say"));
