@@ -1,8 +1,8 @@
 build:
 	make -C app build
 
-checkstyleMain:
-	make -C app checkstyleMain
+checkstyle:
+	make -C app checkstyle
 
 test:
 	make -C app test

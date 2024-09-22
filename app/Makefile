@@ -15,17 +15,15 @@ install:
 run-dist:
 	./build/install/app/bin/app
 
-run:
-	./gradlew run
-
 test:
 	./gradlew test
 
 report:
 	./gradlew jacocoTestReport
 
-checkstyleMain:
+checkstyle:
 	./gradlew checkstyleMain
+	./gradlew checkstyleTest
 
 check-deps:
 	./gradlew dependencyUpdates -Drevision=release
