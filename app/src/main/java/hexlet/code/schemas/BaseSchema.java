@@ -8,8 +8,9 @@ import java.util.function.Predicate;
 public class BaseSchema<T> {
     protected List<Predicate<T>> checks = new ArrayList<>();
 
-    public void required() {
+    public BaseSchema required() {
         checks.add(Objects::nonNull);
+        return this;
     }
 
     public boolean isValid(T t) {
