@@ -42,7 +42,7 @@ class StringSchemaTest {
     }
 
     @Test
-    void chainTest(){
+    void chainTest() {
         assertTrue(schema.isValid(null));
 
         schema.required().minLength(4);

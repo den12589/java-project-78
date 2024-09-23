@@ -56,7 +56,7 @@ class NumberSchemaTest {
         assertFalse(schema.isValid(null));
 
 
-        schema = new Validator().number().range(-1,5).positive();
+        schema = new Validator().number().range(-1, 5).positive();
         assertTrue(schema.isValid(null));
 
         schema.required();

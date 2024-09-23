@@ -12,7 +12,7 @@ public class NumberSchema extends BaseSchema<Integer> {
         return this;
     }
 
-    public NumberSchema required(){
+    public NumberSchema required() {
         super.required();
         return this;
     }
