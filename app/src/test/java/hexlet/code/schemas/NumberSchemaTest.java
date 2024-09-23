@@ -32,6 +32,7 @@ class NumberSchemaTest {
         assertTrue(schema.isValid(9));
         assertFalse(schema.isValid(0));
         assertFalse(schema.isValid(-7));
+        assertFalse(schema.isValid(null));
     }
 
     @Test
@@ -42,6 +43,6 @@ class NumberSchemaTest {
         assertTrue(schema.isValid(5));
         assertTrue(schema.isValid(10));
         assertFalse(schema.isValid(4));
-        assertFalse(schema.isValid(11));
+        assertFalse(schema.isValid(null));
     }
 }
