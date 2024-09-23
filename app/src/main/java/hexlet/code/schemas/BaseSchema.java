@@ -13,7 +13,7 @@ public class BaseSchema<T> {
         return this;
     }
 
-    public boolean isValid(T t) {
+    public final boolean isValid(T t) {
         for (Predicate<T> predicate : checks.values()) {
             if (!predicate.test(t)) {
                 return false;
