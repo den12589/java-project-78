@@ -8,7 +8,7 @@ import java.util.function.Predicate;
 public class BaseSchema<T> {
     protected Map<String, Predicate<T>> checks = new LinkedHashMap<>();
 
-    protected BaseSchema<T> required() {
+    public BaseSchema<T> required() {
         checks.put("NonNull", Objects::nonNull);
         return this;
     }
