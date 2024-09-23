@@ -1,8 +1,8 @@
 package hexlet.code.schemas;
 
-public class StringSchema extends BaseSchema<String> {
+public final class StringSchema extends BaseSchema<String> {
 
-    public final StringSchema required() {
+    public StringSchema required() {
         checks.put("NonEmpty", s -> s != null && !s.isEmpty());
         return this;
     }
