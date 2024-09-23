@@ -2,11 +2,13 @@ package hexlet.code.schemas;
 
 public class NumberSchema extends BaseSchema<Integer> {
 
-    public void positive() {
+    public NumberSchema positive() {
         checks.put("isPositive", i -> i > 0);
+        return this;
     }
 
-    public void range(int min, int max) {
+    public NumberSchema range(int min, int max) {
         checks.put("isInRange", i -> i >= min && i <= max);
+        return this;
     }
 }
