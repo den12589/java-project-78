@@ -4,17 +4,17 @@ public class StringSchema extends BaseSchema<String> {
 
     public StringSchema required() {
         super.required();
-        checks.add(s -> !s.isEmpty());
+        checks.put("NonEmpty", s -> !s.isEmpty());
         return this;
     }
 
     public StringSchema minLength(int min) {
-        checks.add(s -> s.length() >= min);
+        checks.put("isLonger", s -> s.length() >= min);
         return this;
     }
 
     public StringSchema contains(String subString) {
-        checks.add(s -> s.contains(subString));
+        checks.put("isContained", s -> s.contains(subString));
         return this;
     }
 }

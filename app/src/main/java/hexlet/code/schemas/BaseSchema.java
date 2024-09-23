@@ -1,20 +1,20 @@
 package hexlet.code.schemas;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
+import java.util.LinkedHashMap;
 import java.util.Objects;
 import java.util.function.Predicate;
 
 public class BaseSchema<T> {
-    protected List<Predicate<T>> checks = new ArrayList<>();
+    protected Map<String, Predicate<T>> checks = new LinkedHashMap<>();
 
-    public BaseSchema required() {
-        checks.add(Objects::nonNull);
+    protected BaseSchema<T> required() {
+        checks.put("NonNull", Objects::nonNull);
         return this;
     }
 
     public boolean isValid(T t) {
-        for (Predicate<T> predicate : checks) {
+        for (Predicate<T> predicate : checks.values()) {
             if (!predicate.test(t)) {
                 return false;
             }

@@ -41,24 +41,19 @@ class MapSchemaTest {
     @Test
     void shape() {
         Map<String, BaseSchema<String>> schemas = new HashMap<>();
-        // Определяем схемы валидации для значений свойств "firstName" и "lastName"
-        // Имя должно быть строкой, обязательно для заполнения
         schemas.put("firstName", v.string().required());
-        // Фамилия обязательна для заполнения и должна содержать не менее 2 символов
         schemas.put("lastName", v.string().required().minLength(2));
-        // Настраиваем схему `MapSchema`
-        // Передаем созданный набор схем в метод shape()
         schema.shape(schemas);
-        // Проверяем объекты
+
         Map<String, String> human1 = new HashMap<>();
         human1.put("firstName", "John");
         human1.put("lastName", "Smith");
-        assertTrue(schema.isValid(human1)); // true
+        assertTrue(schema.isValid(human1));
 
         Map<String, String> human2 = new HashMap<>();
         human2.put("firstName", "John");
         human2.put("lastName", null);
-        assertFalse(schema.isValid(human2)); // false
+        assertFalse(schema.isValid(human2));
 
         Map<String, String> human3 = new HashMap<>();
         human3.put("firstName", "Anna");
