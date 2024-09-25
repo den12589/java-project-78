@@ -23,6 +23,7 @@ class StringSchemaTest {
         schema.required();
         assertFalse(schema.isValid(null));
         assertFalse(schema.isValid(""));
+        assertTrue(schema.isValid("some string"));
     }
 
     @Test
@@ -49,7 +50,6 @@ class StringSchemaTest {
         assertTrue(schema.isValid("12345"));
         assertFalse(schema.isValid("12"));
         assertFalse(schema.isValid(null));
-
 
         schema = new Validator().string().minLength(5).contains("333");
         assertTrue(schema.isValid(null));
