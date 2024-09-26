@@ -1,7 +1,5 @@
 package hexlet.code.schemas;
 
-import java.util.Objects;
-
 public final class NumberSchema extends BaseSchema<Integer> {
 
     public NumberSchema positive() {
@@ -14,8 +12,9 @@ public final class NumberSchema extends BaseSchema<Integer> {
         return this;
     }
 
+    @Override
     public NumberSchema required() {
-        addToChecks("NonNull", Objects::nonNull);
+        super.required();
         return this;
     }
 }

@@ -1,7 +1,6 @@
 package hexlet.code.schemas;
 
 import java.util.Map;
-import java.util.Objects;
 
 public final class MapSchema extends BaseSchema<Map<String, String>> {
 
@@ -19,7 +18,7 @@ public final class MapSchema extends BaseSchema<Map<String, String>> {
 
     @Override
     public MapSchema required() {
-        addToChecks("NonNull", Objects::nonNull);
+        super.required();
         return this;
     }
 }

@@ -6,14 +6,14 @@ import java.util.Objects;
 import java.util.function.Predicate;
 
 public abstract class BaseSchema<T> {
-    private Map<String, Predicate<T>> checks = new HashMap<>();
+    private final Map<String, Predicate<T>> checks = new HashMap<>();
 
-    public BaseSchema<T> required() {
+    protected BaseSchema<T> required() {
         addToChecks("NonNull", Objects::nonNull);
         return this;
     }
 
-    public void addToChecks(String name, Predicate<T> check) {
+    public final void addToChecks(String name, Predicate<T> check) {
         checks.put(name, check);
     }
 
