@@ -16,7 +16,7 @@ public final class NumberSchema extends BaseSchema<Integer> {
 
     @Override
     public NumberSchema required() {
-        addToChecks("NonNull", Objects::nonNull);
+        addToChecks("!Null", Objects::nonNull);
         return this;
     }
 }

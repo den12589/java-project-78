@@ -19,7 +19,7 @@ public final class MapSchema extends BaseSchema<Map<String, String>> {
 
     @Override
     public MapSchema required() {
-        addToChecks("NonNull", Objects::nonNull);
+        addToChecks("!Null", Objects::nonNull);
         return this;
     }
 }
