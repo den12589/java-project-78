@@ -9,7 +9,7 @@ public class BaseSchema<T> {
     private final Map<String, Predicate<T>> checks = new HashMap<>();
 
     /**
-     * Non null check.
+     * Method put NonNull check to Map.
      * @return BaseSchema<T>
      * Should be Override in extend class
      * to return Object of extend class.
