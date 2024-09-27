@@ -9,7 +9,7 @@ public class BaseSchema<T> {
     private final Map<String, Predicate<T>> checks = new HashMap<>();
 
     /**
-     * Non null check
+     * Non null check.
      * @return BaseSchema<T>
      */
     BaseSchema<T> required() {
