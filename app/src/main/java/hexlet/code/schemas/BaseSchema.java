@@ -2,18 +2,26 @@ package hexlet.code.schemas;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.function.Predicate;
 
-public abstract class BaseSchema<T> {
+public class BaseSchema<T> {
     private final Map<String, Predicate<T>> checks = new HashMap<>();
 
-    abstract BaseSchema<T> required();
+    /**
+     * Non null check
+     * @return BaseSchema<T>
+     */
+    BaseSchema<T> required() {
+        addToChecks("Required", Objects::nonNull);
+        return this;
+    }
 
-    public final void addToChecks(String name, Predicate<T> check) {
+    void addToChecks(String name, Predicate<T> check) {
         checks.put(name, check);
     }
 
-    public final boolean isValid(T t) {
+    boolean isValid(T t) {
         for (Predicate<T> predicate : checks.values()) {
             if (!predicate.test(t)) {
                 return false;

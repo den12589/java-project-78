@@ -30,7 +30,7 @@ class MapSchemaTest {
     @Test
     void sizeof() {
         assertTrue(schema.isValid(Map.of("key", "value")));
-        schema.sizeof(2);
+        schema.sizeOf(2);
         assertFalse(schema.isValid(Map.of("key", "value")));
         assertTrue(schema.isValid(Map.of("key1", "value1", "key2", "value2")));
         assertFalse(schema.isValid(Map.of("key1", "value1", "key2", "value2", "key3", "value3")));
