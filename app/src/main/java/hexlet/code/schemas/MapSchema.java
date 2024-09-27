@@ -4,7 +4,7 @@ import java.util.Map;
 
 public final class MapSchema extends BaseSchema<Map<String, String>> {
 
-    public MapSchema sizeOf(int size) {
+    public MapSchema sizeof(int size) {
         addToChecks("isSizeOf", m -> m == null || m.size() == size);
         return this;
     }
