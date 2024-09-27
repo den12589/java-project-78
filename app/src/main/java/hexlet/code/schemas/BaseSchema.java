@@ -10,8 +10,9 @@ public class BaseSchema<T> {
 
     /**
      * Non null check.
-     *
      * @return BaseSchema<T>
+     * Should be Override in extend class
+     * to return Object of extend class.
      */
     public BaseSchema<T> required() {
         addToChecks("Required", Objects::nonNull);
