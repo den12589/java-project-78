@@ -10,6 +10,7 @@ public class BaseSchema<T> {
 
     /**
      * Non null check.
+     *
      * @return BaseSchema<T>
      */
     BaseSchema<T> required() {
@@ -21,7 +22,7 @@ public class BaseSchema<T> {
         checks.put(name, check);
     }
 
-    boolean isValid(T t) {
+    public boolean isValid(T t) {
         for (Predicate<T> predicate : checks.values()) {
             if (!predicate.test(t)) {
                 return false;
