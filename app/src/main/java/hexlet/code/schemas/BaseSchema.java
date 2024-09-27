@@ -13,16 +13,16 @@ public class BaseSchema<T> {
      *
      * @return BaseSchema<T>
      */
-    BaseSchema<T> required() {
+    public BaseSchema<T> required() {
         addToChecks("Required", Objects::nonNull);
         return this;
     }
 
-    void addToChecks(String name, Predicate<T> check) {
+    final void addToChecks(String name, Predicate<T> check) {
         checks.put(name, check);
     }
 
-    public boolean isValid(T t) {
+    public final boolean isValid(T t) {
         for (Predicate<T> predicate : checks.values()) {
             if (!predicate.test(t)) {
                 return false;
