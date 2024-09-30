@@ -10,6 +10,7 @@ public class BaseSchema<T> {
 
     /**
      * Method put NonNull check to Map.
+     *
      * @return BaseSchema<T>
      * Should be Override in extend class
      * to return Object of extend class.
@@ -19,7 +20,7 @@ public class BaseSchema<T> {
         return this;
     }
 
-    final void addToChecks(String name, Predicate<T> check) {
+    protected final void addToChecks(String name, Predicate<T> check) {
         checks.put(name, check);
     }
 
